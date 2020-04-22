@@ -13,20 +13,18 @@ Function Copy-Files {
     Param (
         # Define parameters below, each separated by a comma
     
-        [Parameter(Mandatory = $True)]
-        [string]$Source = $(throw "You must supply a source directory"),
+        [Parameter(Mandatory = $True, HelpMessage = "Enter a source directory")]
+        [string]$Source,
     
-        [Parameter(Mandatory = $True)]
-        #[ValidateSet('Alpha','Beta','Gamma')]
-        [string]$Target = $(throw "You must supply a target directory"),
+        [Parameter(Mandatory = $True, HelpMessage = "Enter a target directory")]
+        [string]$Target,
      
-        # you don’t have to use the full [Parameter()] decorator on every parameter
         [switch]$ShowProgress,
             
         [switch]$DeleteSource,
+
         [switch]$CreateTarget
             
-        # Add additional parameters here.
     )
     
     
